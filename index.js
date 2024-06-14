@@ -11,7 +11,9 @@ var cron = require('node-cron');
 require('dotenv').config();
 
 const port =  3001;
-const uri = process.env.DB_URI;   
+const uri = process.env.DB_URI; 
+
+process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
 
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } }; 
