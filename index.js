@@ -91,12 +91,12 @@ cron.schedule('*/1 * * * *', async() => {
             const message = {
                 notification: {
                     title: task?.title,
-                    body: task?.description
+                    body: task?.title
                 },
                 token: token?.deviceTokenId
             };
 
-            console.log(message)
+            console.log(message,99)
 
             getMessaging().send(message)
              .then((response) => {
@@ -111,6 +111,6 @@ cron.schedule('*/1 * * * *', async() => {
  })
     
 
-  console.log(dueTaskArray);
+  console.log(dueTaskArray,707);
   console.log("hi this runs every 1 minute")
 });
