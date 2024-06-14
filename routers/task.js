@@ -11,7 +11,7 @@ router.route('/').get(async (req, res) => {
     const { authorization } = req?.headers
     console.log(authorization)
 
-    const { email, name } = jwtDecode(authorization)
+    const { email, name } = jwtDecode(authorization) 
     
 
     if (name && email) {
@@ -31,7 +31,7 @@ router.route('/').get(async (req, res) => {
             resultObject && res.status(200).json(resultObject)
         }
         catch (error) {
-            res.status(400).json({ message: 'ERR_BAD_REQUEST' })
+            res.status(400).json({ message: 'ERR_BAD_REQUEST' }) 
         }
     }
     else {
