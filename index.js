@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const task = require("./models/taskModel")
 const deviceTokens = require('./models/deviceTokenModel')
 const { getMessaging } = require('firebase-admin/messaging')
-// const { initializeApp , applicationDefault } = require('firebase-admin/app');
+const { initializeApp , applicationDefault } = require('firebase-admin/app');
 var cron = require('node-cron');
 
 require('dotenv').config();
@@ -13,7 +13,7 @@ require('dotenv').config();
 const port =  3001;
 const uri = process.env.DB_URI; 
 
-process.env.GOOGLE_APPLICATION_CREDENTIALS;
+// process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
 
 const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } }; 
