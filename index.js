@@ -11,7 +11,10 @@ var cron = require('node-cron');
 require('dotenv').config();
 
 const port =  3001;
-const uri = process.env.DB_URI;      
+const uri = process.env.DB_URI;   
+
+
+const clientOptions = { serverApi: { version: '1', strict: true, deprecationErrors: true } }; 
 
 //Connecting to server
 app.use(cors()); 
@@ -21,7 +24,9 @@ app.listen(port, () => {
     console.log(`server listening on ${port}`); 
 });
 
-//connecting to database
+//connecting to database 
+
+
 mongoose.connect(uri);
 console.log(uri)   
 
@@ -30,7 +35,7 @@ connection.once('open', () => {console.log("MongoDB database connection establis
 
 //Home
 app.get('/', (req, res) => {
-    res.send('hello world')
+    res.send('hello world')   
 })
 
 // imports 
