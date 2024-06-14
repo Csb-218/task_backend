@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const task = require("./models/taskModel")
 const deviceTokens = require('./models/deviceTokenModel')
 const { getMessaging } = require('firebase-admin/messaging')
-const { initializeApp , applicationDefault } = require('firebase-admin/app');
+// const { initializeApp , applicationDefault } = require('firebase-admin/app');
 var cron = require('node-cron');
 
 require('dotenv').config();
@@ -35,20 +35,16 @@ connection.once('open', () => {console.log("MongoDB database connection establis
 
 //Home
 app.get('/', (req, res) => {
-    res.send('hello world')   
+    res.send('welcome to task app server')   
 })
 
 // imports 
 const taskRouter = require("./routers/task")
 const deviceTokenRouter = require("./routers/token")
+
 // routers
 app.use('/task',taskRouter)
 app.use('/token',deviceTokenRouter)
-
-console.log("bye")
-
-
-
 
 
 cron.schedule('*/1 * * * *', async() => {
